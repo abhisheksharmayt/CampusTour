@@ -1,0 +1,36 @@
+<% layout('layouts/boilerPlate') %>
+    <div class="row ">
+        <h1 class="text-center">Edit Campus</h1>
+        <div class="col-6 offset-3">
+            <form action="/campuses/<%= campus._id %>?_method=PATCH" method="post">
+                <div class="mb-3">
+                    <label class="form-label" for="campus_name">Campus Name : </label>
+                    <input class="form-control" type="text" id="campus_name" placeholder="campus name"
+                        name="campus_name" value="<%= campus.campus_name %>">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="location">Location : </label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="bi bi-geo-alt"></i></span>
+                        <input class="form-control" type="text" name="location" id="location" placeholder="location"
+                            value="<%= campus.location %>">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="imageUrl">Image Url : </label>
+                    <input class="form-control" type="text" name="image" id="imageUrl" placeholder="https://imageURL"
+                        value="<%= campus.image %> ">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="description">Description : </label>
+                    <textarea class="form-control" id="description" rows="3" name="description"
+                        placeholder="Type something about your campus..."><%= campus.description %> "</textarea>
+                </div>
+                <div class="mb-3">
+                    <button class="btn btn-success">Update</button>
+                    <a href="/campuses/<%= campus._id %>"><button type="button" class="btn btn-outline-dark">Back To
+                            Campus</button></a>
+                </div>
+            </form>
+        </div>
+    </div>

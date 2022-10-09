@@ -1,0 +1,54 @@
+<% layout('layouts/boilerPlate') %>
+    <h1>All Campuses</h1>
+    <div class="container">
+        <% for(let i=0; i<allcampus.length-2; i+=3) { %>
+            <div class="row">
+                <div class="col">
+                    <div class="card my-3" style="width: 25rem;">
+                        <img src="<%= allcampus[i].image %> " class="card-img-top" alt="campus image">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= allcampus[i].campus_name %>
+                            </h5>
+                            <h6 class="card-text text-muted"><i class="bi bi-geo-alt"></i><%= allcampus[i].location %></h6>
+                            <p class="card-text">
+                                <%= allcampus[i].description %>
+                            </p>
+                            <a href="/campuses/<%= allcampus[i]._id %>" class="btn btn-primary">Visit Campus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3" style="width: 25rem;">
+                        <img src="<%= allcampus[i+1].image %> " class="card-img-top" alt="campus image">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= allcampus[i+1].campus_name %>
+                            </h5>
+                            <h6 class="card-text text-muted"><i class="bi bi-geo-alt"></i><%= allcampus[i+1].location %></h6>
+                            <p class="card-text">
+                                <%= allcampus[i+1].description %>
+                            </p>
+                            <a href="/campuses/<%= allcampus[i+1]._id %>" class="btn btn-primary">Visit Campus</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card my-3" style="width: 25rem;">
+                        <img src="<%= allcampus[i+2].image %> " class="card-img-top" alt="campus image">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                <%= allcampus[i+2].campus_name %>
+                            </h5>
+                            <h6 class="card-text text-muted"><i class="bi bi-geo-alt"></i><%= allcampus[i+2].location %></h6>
+                            <p class="card-text">
+                                <%= allcampus[i+2].description %>
+                            </p>
+                            <a href="/campuses/<%= allcampus[i+2]._id %>" class="btn btn-primary">Visit Campus</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <% } %>
+    </div>

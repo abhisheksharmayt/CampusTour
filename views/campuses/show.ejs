@@ -1,0 +1,19 @@
+<% layout('layouts/boilerPlate') %>
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-4" >
+            <img src="<%= c.image %> " class="card-img-top" alt="...">
+            <div class="card-body">
+              <h2 class="card-title"><%= c.campus_name %></h2>
+              <h6 class="card-text text-muted"><i class="bi bi-geo-alt"></i><%= c.location %></h6>
+              <p class="card-text"><%= c.description %></p>
+            </div>
+            <div class="card-body">
+                <form action="/campuses/<%= c._id %>?_method=DELETE" method="post">
+                    <a href="/campuses/<%= c._id %>/edit"><button type="button" class="btn btn-primary">EDIT</button></a>
+                    <button class="btn btn-danger">DELETE</button>
+                </form>
+            </div>
+          </div>
+    </div>
+</div>
